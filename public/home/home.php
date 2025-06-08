@@ -1,5 +1,5 @@
 <?php
-require_once "../shared/header.php"
+require_once "public/shared/header.php"
 
 ?>
 
@@ -9,7 +9,7 @@ require_once "../shared/header.php"
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/site.css">
+    <link rel="stylesheet" href="assets/css/site.css">
 </head>
 
 <body>
@@ -38,7 +38,7 @@ require_once "../shared/header.php"
                     <h4 class="fonte14 txt-c mg-b-2">Promoção</h4>
                 </div>
                 <div class="box-8">
-                    <img src="../../assets/img/notebook.png" alt="Notebook" title="Notebook">
+                    <img src="assets/img/notebook.png" alt="Notebook" title="Notebook">
                 </div>
                 <div class="box-12">
                     <p class="fonte14">Notebook</p>
@@ -46,14 +46,14 @@ require_once "../shared/header.php"
                 </div>
                 <div class="box-12">
                     <p class="fonte18 poppins-black txt-c mg-t-2">R$ 1.250,99</p>
-                    <a href="" class="btn-100 bg-p7-electric mg-t-2 fnc-branco fonte14 bg-p2-verde-hover">inserir no carrinho</a>
+                    <a href="index.php?arquivo=controlador&metodo=inserir_carrinho" class="btn-100 bg-p7-electric mg-t-2 fnc-branco fonte14 bg-p2-verde-hover">inserir no carrinho</a>
                 </div>
             </div>
         </div>
     </section>
 
     <?php 
-        require_once "../shared/footer.php";
+        require_once "public/shared/footer.php";
     ?>
 
 </body>

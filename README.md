@@ -1,11 +1,11 @@
-# Vetor-256 e-commerce 🌐
+# Vetor256. e-commerce 🌐
 
-Bem-vindo ao repositório oficial do **Vetor-256 E-commerce**! 🚀  
+Bem-vindo ao repositório oficial do **Vetor256. E-commerce**! 🚀  
 Este é um site institucional e comercial, desenvolvido para apresentar produtos, permitir compras e gerenciar um carrinho de compras de forma intuitiva e eficiente.  
 
 ## 🧩 Quem somos?
 
-**Vetor256** é uma empresa focada na **otimização de processos**, desenvolvendo **sites e sistemas online** para negócios que buscam eficiência e inovação.  
+**Vetor256.** é uma empresa focada na **otimização de processos**, desenvolvendo **sites e sistemas online** para negócios que buscam eficiência e inovação.  
 
 ## 🔧 Tecnologias  
 
@@ -30,6 +30,11 @@ O e-commerce **Vetor-256** conta com as seguintes seções:
 - **Carrinho** – Área para gerenciar pedidos e finalizar compras  
 - **Contato** – Informações de localização e suporte  
 
+## 🌟 Rotas
+
+O e-commerce **Vetor-256** usa o MVC como controlador de Rotas:  
+- **MVC** – Model View Controller para acessar as rotas do site.  
+
 ## 📫 Entre em contato  
 
 Entre em contato conosco:  
@@ -49,10 +54,10 @@ Acreditamos que a tecnologia pode transformar **a forma como os negócios operam
 <img src="./assets/img/logotipo-do-linkedin.png" alt="LinkedIn"> [LinkedIn](https://www.linkedin.com/in/isaias-lourenco/)  
 
 📌 **Repositório:**  
-<a href="https://github.com/IsaiasLourenco/e-compras" target="_blank"> 💻 Vetor-256 E-commerce</a>  
+<a href="https://github.com/IsaiasLourenco/e-compras" target="_blank"> 💻 Vetor256. E-commerce</a>  
 
 📌 **Acesse o site:**  
-<a href="https://isaiaslourenco.github.io/ecommerce/" target="_blank">🔗 Vetor-256 E-commerce</a>  
+<a href="https://isaiaslourenco.github.io/ecommerce/" target="_blank">🔗 Vetor256. E-commerce</a>  
 
 ---
 
