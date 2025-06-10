@@ -3,6 +3,10 @@ session_start();
 require_once "classes/produto.php";
 require_once "classes/clientes.php";
 require_once "classes/notification.php";
+require_once "classes/boleto.php";
+require_once "classes/cartao_credito.php";
+require_once "classes/pay_pal.php";
+require_once "classes/pix.php";
 
 class controlador extends notification
 {
@@ -98,8 +102,7 @@ class controlador extends notification
         $_SESSION['qtdeProduto'] = $total;
     }
 
-    public function finalizar_carrinho(): void
-    {
+    public function finalizar_carrinho(): void {
         require_once "public/shared/header.php";
         $clienteId =  $_POST['clientes'];
         $formaPag =  $_POST['formapagamento'];
@@ -113,18 +116,22 @@ class controlador extends notification
         endforeach;
 
         $formaPagamento = null;
-        switch ($formaPagamento):
+        switch ($formaPag):
             case '1':
                 $formaPagamento = new pix();
+                $formaPag = "PIX";
                 break;
             case '2':
                 $formaPagamento = new boleto();
+                $formaPag = "Boleto";
                 break;
             case '3':
                 $formaPagamento = new pay_pal();
+                $formaPag = "Pay-Pal";
                 break;
             case '4':
                 $formaPagamento = new cartao_credito();
+                $formaPag = "Cartão de Crédito";
                 break;
         endswitch;
 
@@ -137,16 +144,16 @@ class controlador extends notification
                         echo "Detalhes da Compra";
                     echo "</h3>";
                 
-                    echo "<div style='border-bottom: 1px solid #ccc; padding: 10px 0; margin: -10px 0;'></div>";
-
-                    echo "<div class='box-12'>";
-                        echo "<div class='box-12' style='margin-top: 20px;'>";
-                            echo "<p class='txt-c fonte14 espaco-letra poppins-medium'>";
-                                echo "<strong class='fonte16'>Cliente:</strong> {$cliSelecionado->getNome()}<br>";
-                                echo "<strong class='fonte16'>Documento:</strong> {$cliSelecionado->getCpf()}"; 
-                            echo "</p>";
-                        echo "</div>";                            
-                    echo "</div>";
+                    echo "<div class='divider'></div>";
+            
+                    echo "<div class='box-12 bg-p3-paper radius' style='margin-top: 20px;'>";
+                        echo "<p class='txt-c fonte14 espaco-letra poppins-medium'>";
+                            echo "<strong class='fonte16'>Cliente:</strong> {$cliSelecionado->getNome()}<br>";
+                            echo "<strong class='fonte16 mg-b-2'>Documento:</strong> {$cliSelecionado->getCpf()}"; 
+                        echo "</p>";
+                    echo "</div>";                            
+                    
+                    echo "<div class='limpar'></div> <div class='divider'></div>";
                 
                     echo "<div class='box-12 mg-t-2'>";
                         echo "<h3 class='txt-c'>";
@@ -154,12 +161,65 @@ class controlador extends notification
                         echo "</h3>";
                     echo "</div>";
 
-                    echo "<div style='border-bottom: 1px solid #ccc; padding: 10px 0; margin-top: 120px; margin-bottom: 20px;'></div>";
+                    echo "<div class='limpar'></div> <div class='divider'></div>";
 
+                    if (isset($_SESSION['carrinho'])):
+                        $total = 0;
+                        foreach($_SESSION['carrinho'] as $key => $valor):
+                            $subTotal = $valor['qtde'] * $valor['preco'];
+                            $total += $subTotal;
+                            echo "<div class='box-12 bg-p3-paper radius' style='margin-top: 20px;'>";
+                                echo "<div class='box-2'>";
+                                    echo "<img src='assets/img/{$valor['imagem']}' class='logo-40' />";
+                                echo "</div>";   
+                                echo "<div class='box-10'>";
+                                    echo "<p class='item'>";
+                                        echo "<span class='label fonte16'><strong>Descrição:</strong></span> ";
+                                        echo "<span class='fonte14'>{$valor['descricao']}</span>";
+                                    echo "</p>";
+                                echo "<p class='item'>";
+                                    echo "<span class='label fonte16'><strong>Qtde:</strong></span> ";
+                                    echo "<span class='fonte14'>{$valor['qtde']}</span>";
+                                echo "</p>";
+                                echo "<p class='item'>";
+                                    echo "<span class='label fonte16'><strong>Sub-Total:</strong></span> ";
+                                    $subTotalFormatado = "R$ " . number_format($subTotal, 2, ',', '.');
+                                    echo "<span class='fonte14'>{$subTotalFormatado}</span>";
+                                echo "</p>";
+                            echo "</div>";   
+                            
+                            echo "<div class='limpar'></div> <div class='divider'></div>";   
+
+                        endforeach;
+                    endif;
+
+                    echo "<div class='box-12' style='text-align: right; margin: 20px 0;'>";
+                        $totalFormatado = "R$ " . number_format($total, 2, ',', '.');
+                        echo "<h3 style='font-size: 3rem;'>";
+                            echo "<span style='font-weight: bold;'>Total:</span> ";
+                            echo "<span style='font-weight: normal;'>$totalFormatado</span>";
+                        echo "</h3>";
+                    echo "</div>";
+
+                    echo "<div class='box-12'>";
+                        echo "<p class='bg-p1-verde2 radius pd-10' style='font-size: 18px; text-align: center; margin: 20px 0;'>";
+                            echo "<strong class='fnc-verde'>Pagamento realizado via:</strong> {$formaPag}";
+                        echo "</p>";
+                    echo "</div>";
+
+                echo "</div>";
+
+                echo "<div class='box-12 mg-t-2'>";
+                    echo "<a href='index.php?arquivo=$formaPag&metodo=pagar&parametro=$total' class='btn-100 bg-p1-laranja fonte16'>";
+                        echo "Finalizar carrinho!";
+                    echo "</a>";
                 echo "</div>";
 
             echo "</div>";
 
         echo "</div>";
+
+        unset($_SESSION['carrinho']);
+        unset($_SESSION['qtdeProduto']);
     }
 }
