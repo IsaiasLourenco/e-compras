@@ -24,7 +24,7 @@ footer {
     border-collapse: collapse;
 }
 
-.img-prod{
+.img-prod {
     transition: all .40s ease-in-out;
 }
 
@@ -32,7 +32,9 @@ footer {
     transform: scale(1.1);
 }
 
-.qtde{
-    width: 40px;
-    padding-left: 15px;
+.qtde {
+    font-size: 10px;
+    font-weight: bolder;
+    display: block;
+    margin: 0 auto;
 }

@@ -1,3 +1,9 @@
+<?php 
+    if (!isset($_SESSION)):
+        session_start();
+    endif;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,7 +31,15 @@
                     <li>
                         <a href="index.php?arquivo=controlador&metodo=inserir_carrinho" class="flex justify-end item-centro mg-1-1">
                             <i class="fa-solid fa-cart-shopping fonte26 fnc-preto-1"></i>
-                            <span class="balao flex justify-center item-centro"> 0 </span>
+                            <span class="balao flex justify-center item-centro"> 
+                                <?php 
+                                    if (isset($_SESSION['carrinho'])):
+                                        echo $_SESSION['qtdeProduto'];
+                                    else:
+                                        echo '0';
+                                    endif; 
+                                ?>
+                            </span>
                         </a>
                     </li>
                 </ul>

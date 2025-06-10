@@ -65,4 +65,4 @@ Acreditamos que a tecnologia pode transformar **a forma como os negócios operam
 Construindo o futuro, uma linha de código por vez. ✨  
 Juntos com você na era da informação. 🚀  
 
-<img src="./img/padoca.gif" alt="Padoca.">
+<img src="./assets/img/e-compras.gif" alt="e-compras">
