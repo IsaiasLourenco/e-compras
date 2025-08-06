@@ -13,5 +13,7 @@
             "name": "Isaias Lourenço"
         }
     ],
-    "require": {}
+    "require": {
+        "dompdf/dompdf": "^3.1"
+    }
 }

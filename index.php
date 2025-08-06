@@ -5,8 +5,8 @@ include "vendor/autoload.php";
 // Correção antecipada de nomes
 if (isset($_GET['arquivo'])) {
     $correcoes = [
-        "Pay-Pal" => "pay_pal",
-        "PayPal" => "pay_pal",
+        "Pay-Pal" => "PayPal",
+        "PayPal" => "PayPal",
         "Cartão de Crédito" => "cartao_credito",
         "Cartao de Credito" => "cartao_credito",
         "controlador" => "Controlador",
