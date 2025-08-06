@@ -1,8 +1,6 @@
 <?php
-require_once "classes/notification.php";
-require_once "classes/pagto_interface.php";
-
-class pay_pal extends notification implements pagto_interface
+namespace App;
+class Boleto extends Notification implements PagtoInterface
 {
     public function pagar($valor): void
     {
@@ -14,8 +12,8 @@ class pay_pal extends notification implements pagto_interface
         }
 
         // Mensagem formatada corretamente
-        $msg = "O valor de " . number_format($valor, 2, ',', '.') .
-            " foi pago via Pay-Pal. <br>";
+        $msg = "O Boleto no valor de " . number_format($valor, 2, ',', '.') .
+            " foi gerado com sucesso e aguarda o pagamento. <br>";
 
         // Exibe a mensagem ao invés de retornar
         $this->success(msg: $msg, arquivo: 'controlador', metodo: 'index');

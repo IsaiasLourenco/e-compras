@@ -1,7 +1,6 @@
 <?php
-require_once "classes/notification.php";
-require_once "classes/pagto_interface.php";
-class boleto extends notification implements pagto_interface
+namespace App;
+class CartaoCredito extends Notification implements PagtoInterface
 {
     public function pagar($valor): void
     {
@@ -13,8 +12,8 @@ class boleto extends notification implements pagto_interface
         }
 
         // Mensagem formatada corretamente
-        $msg = "O Boleto no valor de " . number_format($valor, 2, ',', '.') .
-            " foi gerado com sucesso e aguarda o pagamento. <br>";
+        $msg = "O crédito no valor de " . number_format($valor, 2, ',', '.') .
+            " foi gerado com sucesso e será lançado na sua próxima fatura do cartão. <br>";
 
         // Exibe a mensagem ao invés de retornar
         $this->success(msg: $msg, arquivo: 'controlador', metodo: 'index');

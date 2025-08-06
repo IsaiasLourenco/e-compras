@@ -1,25 +1,19 @@
 <?php
+namespace App;
 session_start();
-require_once "classes/produto.php";
-require_once "classes/clientes.php";
-require_once "classes/notification.php";
-require_once "classes/boleto.php";
-require_once "classes/cartao_credito.php";
-require_once "classes/pay_pal.php";
-require_once "classes/pix.php";
 
-class controlador extends notification
+class Controlador extends Notification
 {
     public function index(): void
     {
-        $prod = new produto();
+        $prod = new Produto();
         $retrn = $prod->gerarProduto();
         require_once "public/home/home.php";
     }
 
     public function inserir_carrinho(): void
     {
-        $cliente = (new clientes())->gerarClientes();
+        $cliente = (new Clientes())->gerarClientes();
 
         if ($_GET && isset($_GET['id'])) {
             $id = $_GET['id'];
@@ -43,7 +37,7 @@ class controlador extends notification
             // Se o produto não existir no carrinho, adiciona-o
             if (!$existe) {
                 $linha = count($_SESSION['carrinho']);
-                $produto = (new produto())->obterProdutoPorId(id: $id);
+                $produto = (new Produto())->obterProdutoPorId(id: $id);
 
                 $_SESSION['carrinho'][$linha] = [
                     'id'        => str_pad($produto->getId(), 3, '0', STR_PAD_LEFT),
@@ -107,7 +101,7 @@ class controlador extends notification
         $clienteId =  $_POST['clientes'];
         $formaPag =  $_POST['formapagamento'];
 
-        $cli = (new clientes())->gerarClientes();
+        $cli = (new Clientes())->gerarClientes();
         $cliSelecionado = null;
         foreach($cli as $valorCli):
             if($valorCli->getId() == $clienteId):
@@ -118,19 +112,19 @@ class controlador extends notification
         $formaPagamento = null;
         switch ($formaPag):
             case '1':
-                $formaPagamento = new pix();
+                $formaPagamento = new Pix();
                 $formaPag = "PIX";
                 break;
             case '2':
-                $formaPagamento = new boleto();
+                $formaPagamento = new Boleto();
                 $formaPag = "Boleto";
                 break;
             case '3':
-                $formaPagamento = new pay_pal();
-                $formaPag = "Pay-Pal";
+                $formaPagamento = new PayPal();
+                $formaPag = "PayPal";
                 break;
             case '4':
-                $formaPagamento = new cartao_credito();
+                $formaPagamento = new CartaoCredito();
                 $formaPag = "Cartão de Crédito";
                 break;
         endswitch;

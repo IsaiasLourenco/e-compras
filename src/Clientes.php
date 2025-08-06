@@ -1,5 +1,6 @@
 <?php 
-    class clientes {
+namespace App;
+    class Clientes {
         private int $id;
         private string $nome;
         private string $cpf;
@@ -25,9 +26,9 @@
 
         public function gerarClientes(): array {
             return $clientes = [
-                new clientes(id: 001, nome: "Isaias Lourenço", cpf: '247.074.358-31'),
-                new clientes(id: 002, nome: "Éviliny Mariana", cpf: '000.000.000-00'),
-                new clientes(id: 003, nome: "Afonso Lourenço", cpf: '714.463.628-68'),
+                new Clientes(id: 001, nome: "Isaias Lourenço", cpf: '247.074.358-31'),
+                new Clientes(id: 002, nome: "Éviliny Mariana", cpf: '000.000.000-00'),
+                new Clientes(id: 003, nome: "Afonso Lourenço", cpf: '714.463.628-68'),
             ];
         }
     }

@@ -1,8 +1,7 @@
 <?php
-require_once "classes/notification.php";
-require_once "classes/pagto_interface.php";
+namespace App;
 
-class pix extends notification implements pagto_interface {
+class Pix extends Notification implements PagtoInterface {
     public function pagar($valor): void {
         // Verifica se 'parametro' foi passado e converte corretamente para float
         if (isset($_GET['parametro']) && $_GET['parametro'] !== '') {
@@ -16,7 +15,7 @@ class pix extends notification implements pagto_interface {
                " foi gerado com sucesso e aguarda o pagamento via PIX. <br>";
 
         // Exibe a mensagem ao invés de retornar
-        $this->success(msg: $msg, arquivo: 'controlador', metodo: 'index');
+        $this->success(msg: $msg, arquivo: 'Controlador', metodo: 'index');
     }
 }
 ?>

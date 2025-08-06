@@ -1,5 +1,6 @@
 <?php 
-    interface pagto_interface {
+namespace App;
+    interface PagtoInterface {
         public function pagar($valor);
     }
 ?>

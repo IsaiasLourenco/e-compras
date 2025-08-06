@@ -1,5 +1,6 @@
 <?php
-class produto
+namespace App;
+class Produto
 {
     private int $id;
     private string $descricao;
@@ -37,12 +38,12 @@ class produto
     public function gerarProduto(): array
     {
         return $produtos = [
-            new produto(id: 001, descricao: "Notebook", preco: 1250.99, imagem: "notebook.png"),
-            new produto(id: 002, descricao: "Teclado", preco: 120.00, imagem: "teclado.jpg"),
-            new produto(id: 003, descricao: "Tablet", preco: 1000.00, imagem: "tablet.jpg"),
-            new produto(id: 004, descricao: "Óculos", preco: 2690.00, imagem: "oculos.png"),
-            new produto(id: 005, descricao: "Iphone", preco: 8500.00, imagem: "iphone.jpg"),
-            new produto(id: 006, descricao: "Phone", preco: 2100.00, imagem: "fone.png"),
+            new Produto(id: 001, descricao: "Notebook", preco: 1250.99, imagem: "notebook.png"),
+            new Produto(id: 002, descricao: "Teclado", preco: 120.00, imagem: "teclado.jpg"),
+            new Produto(id: 003, descricao: "Tablet", preco: 1000.00, imagem: "tablet.jpg"),
+            new Produto(id: 004, descricao: "Óculos", preco: 2690.00, imagem: "oculos.png"),
+            new Produto(id: 005, descricao: "Iphone", preco: 8500.00, imagem: "iphone.jpg"),
+            new Produto(id: 006, descricao: "Phone", preco: 2100.00, imagem: "fone.png"),
         ];
     }
 

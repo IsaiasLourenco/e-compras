@@ -1,5 +1,6 @@
 <?php 
-    abstract class notification
+namespace App;
+    abstract class Notification
     {
         public function success($msg, $arquivo, $metodo): void {
             echo "<link rel='stylesheet' href='assets/css/aurora.css'>";
