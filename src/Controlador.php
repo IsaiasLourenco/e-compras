@@ -39,7 +39,7 @@ class Controlador extends Notification
 
             if (!$existe) {
                 $linha = count($_SESSION['carrinho']);
-                $produto = (new Produto())->obterProdutoPorId(id: $id);
+                $produto = (new Produto())->obterProdutoPorId($id);
 
                 $_SESSION['carrinho'][$linha] = [
                     'id'        => str_pad($produto->getId(), 3, '0', STR_PAD_LEFT),

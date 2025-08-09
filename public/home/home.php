@@ -34,7 +34,7 @@ require_once "public/shared/header.php"
                 <h3 class="fonte40 fnc-preto-1 poppins-black">Produtos em Destaque</h3>
             </div>
             <?php 
-                if (isset($retrn) && count(value: $retrn) > 0):
+                if (isset($retrn) && count($retrn) > 0):    
                     foreach($retrn as $key => $valor):
             ?>
                 <div class="box-2 borda-1 shadow-down pd-10">

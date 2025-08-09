@@ -2,12 +2,12 @@
 namespace App;
 class Produto
 {
-    private int $id;
-    private string $descricao;
-    private float $preco;
-    private string $imagem;
+    private $id;
+    private $descricao;
+    private $preco;
+    private $imagem;
 
-    public function __construct(int $id = 0, string $descricao = '', float $preco = 0.00, string $imagem = '')
+    public function __construct($id = 0, $descricao = '', $preco = 0.00, $imagem = '')
     {
         $this->id = $id;
         $this->descricao = $descricao;
@@ -15,44 +15,44 @@ class Produto
         $this->imagem = $imagem;
     }
 
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getDescricao(): string
+    public function getDescricao()
     {
         return $this->descricao;
     }
 
-    public function getPreco(): float
+    public function getPreco()
     {
         return $this->preco;
     }
 
-    public function getImagem(): string
+    public function getImagem()
     {
         return $this->imagem;
     }
 
-    public function gerarProduto(): array
+    public function gerarProduto()
     {
         return $produtos = [
-            new Produto(id: 001, descricao: "Notebook", preco: 1250.99, imagem: "notebook.png"),
-            new Produto(id: 002, descricao: "Teclado", preco: 120.00, imagem: "teclado.jpg"),
-            new Produto(id: 003, descricao: "Tablet", preco: 1000.00, imagem: "tablet.jpg"),
-            new Produto(id: 004, descricao: "Óculos", preco: 2690.00, imagem: "oculos.png"),
-            new Produto(id: 005, descricao: "Iphone", preco: 8500.00, imagem: "iphone.jpg"),
-            new Produto(id: 006, descricao: "Phone", preco: 2100.00, imagem: "fone.png"),
+            new Produto(1, "Notebook", 1250.99, "notebook.png"),
+            new Produto(2, "Teclado", 120.00, "teclado.jpg"),
+            new Produto(3, "Tablet", 1000.00, "tablet.jpg"),
+            new Produto(4, "Óculos", 2690.00, "oculos.png"),
+            new Produto(5, "Iphone", 8500.00, "iphone.jpg"),
+            new Produto(6, "Phone", 2100.00, "fone.png"),
         ];
     }
 
-    public function obterProdutos(): array
+    public function obterProdutos()
     {
         return $this->gerarProduto();
     }
 
-    public function obterProdutoPorId($id): produto|null
+    public function obterProdutoPorId($id)
     {
         $produtos = $this->gerarProduto();
         foreach ($produtos as $prod):
@@ -62,7 +62,7 @@ class Produto
         endforeach;
         return null;
     }
-    public function getPrecoFormatado(): string
+    public function getPrecoFormatado()
     {
         return 'R$ ' . number_format($this->preco, 2, ',', '.');
     }
