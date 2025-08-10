@@ -181,7 +181,7 @@ class Controlador extends Notification
             $html .= "<table style='width: 100%; margin-bottom: 20px; border: 1px solid #ccc; border-collapse: collapse;'>";
             $html .= "<tr>";
             $html .= "<td style='width: 80px; padding: 10px; vertical-align: top; border-right: 1px solid #ccc;'>";
-            $html .= "<img src='http://localhost/e-compras/assets/img/{$valor['imagem']}' style='width: 60px; height: auto;' />";
+            $html .= "<img src='https://e-commerce.vetor256.com/assets/img/{$valor['imagem']}' style='width: 60px; height: auto;' />";
             $html .= "</td>";
             $html .= "<td style='padding: 10px; vertical-align: top;'>";
             $html .= "<p><strong>Descrição:</strong> {$valor['descricao']}</p>";

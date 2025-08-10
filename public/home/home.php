@@ -9,6 +9,7 @@ require_once "public/shared/header.php"
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/aurora-responsivo.css" media="(max-width: 768px)">
     <link rel="stylesheet" href="assets/css/site.css">
 </head>
 
@@ -18,7 +19,7 @@ require_once "public/shared/header.php"
         <div class="container">
             <div class="box-8 flex justify-center item-centro">
                 <div class="box-6 mg-t-2">
-                    <span class="bg-p1-laranja fonte16 pd-l-1 block wd-50">Grandes promoções</span>
+                    <p style="text-align: center;" class="bg-p1-laranja fonte18">Grandes Promoções</p>
                     <h3 class="fonte50">
                         Venha conferir! <br>
                         Nossos preços <br> estão incríveis!
@@ -34,7 +35,7 @@ require_once "public/shared/header.php"
                 <h3 class="fonte40 fnc-preto-1 poppins-black">Produtos em Destaque</h3>
             </div>
             <?php 
-                if (isset($retrn) && count($retrn) > 0):    
+                if (isset($retrn) && count($retrn) > 0):
                     foreach($retrn as $key => $valor):
             ?>
                 <div class="box-2 borda-1 shadow-down pd-10">

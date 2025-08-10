@@ -11,8 +11,8 @@ class Pix extends Notification implements PagtoInterface {
         }
 
         // Mensagem formatada corretamente
-        $msg = "O Boleto no valor de " . number_format($valor, 2, ',', '.') . 
-               " foi gerado com sucesso e aguarda o pagamento via PIX. <br>";
+        $msg = "O pagamento via PIX no valor de " . number_format($valor, 2, ',', '.') . 
+               " foi gerado com sucesso e aguarda o pagamento. <br>";
 
         // Exibe a mensagem ao invés de retornar
         $this->success(msg: $msg, arquivo: 'Controlador', metodo: 'index');

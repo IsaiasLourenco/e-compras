@@ -1,0 +1,231 @@
+/* === 1200px === */
+@media (max-width: 1200px) {
+  .md-wd-100 { width: 100%; }
+  .md-hide { display: none !important; }
+  .md-stack { flex-direction: column; }
+}
+
+/* === 992px === */
+@media (max-width: 992px) {
+  .sm-wd-100 { width: 100%; }
+  .sm-hide { display: none !important; }
+  .sm-stack { flex-direction: column; }
+  .sm-center { justify-content: center; align-items: center; }
+}
+
+/* === 768px === */
+@media (max-width: 768px) {
+  .xs-wd-100 { width: 100%; }
+  .xs-hide { display: none !important; }
+  .xs-stack { flex-direction: column; }
+  .xs-pd-10 { padding: 1rem; }
+  .xs-fonte14 { font-size: 1.4rem; }
+
+  .responsive-table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .responsive-table table {
+    width: 100%;
+    min-width: 600px;
+  }
+
+  .btn-100 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  select,
+  input[type="number"] {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Imagem principal da home - ocupar largura total, evitar corte */
+  .home-main-image {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;
+    margin: 0 auto 1rem auto;
+  }
+
+  /* Ícone do carrinho no topo direito */
+  header .fa-cart-shopping {
+    position: fixed !important;
+    top: 1rem !important;
+    right: 1rem !important;
+    font-size: 2.2rem !important;
+    z-index: 9999 !important;
+  }
+
+  /* Ajuste do balão do carrinho para ficar junto ao ícone */
+  header .balao {
+    position: fixed !important;
+    top: 0.8rem !important;
+    right: 3.5rem !important;
+    min-width: 20px !important;
+    height: 20px !important;
+    font-size: 1rem !important;
+  }
+
+  /* Produtos em destaque (home.php) */
+  .prod .container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+    justify-content: center !important;
+  }
+
+  .prod .box-2 {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 1rem !important;
+  }
+
+  .prod .img-prod {
+    max-width: 90% !important;
+    height: auto !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .prod .btn-100 {
+    width: 90% !important;
+    font-size: 1.2rem !important;
+    padding: 0.8rem !important;
+    margin: 1rem auto 0 auto !important;
+    display: block !important;
+  }
+
+  /* Ajuste para o span "Grandes promoções" */
+  .prod .bg-p1-laranja.fonte16.pd-l-1.wd-50 {
+    display: block !important;             /* Garante que o span ocupe toda a linha */
+    width: 100% !important;                /* Ocupa toda a largura disponível */
+    padding-left: 0.5rem !important;      /* Ajuste do padding esquerdo */
+    padding-right: 0.5rem !important;     /* Ajuste do padding direito */
+    background-color: #FFA500 !important; /* Fundo laranja */
+    text-align: center !important;         /* Alinha o texto ao centro */
+    white-space: nowrap !important;        /* Impede a quebra de linha */
+  }
+
+  /* Carrinho - ícone no topo direito */
+  .cart-header .fa-cart-shopping {
+    position: fixed !important;
+    top: 1rem !important;
+    right: 1rem !important;
+    font-size: 2rem !important;
+    z-index: 9999 !important;
+  }
+
+  /* Tabela responsiva: scroll horizontal */
+  .cart-table {
+    display: block !important;
+    overflow-x: auto !important;
+    width: 100% !important;
+  }
+  .cart-table table {
+    min-width: 600px !important;
+  }
+
+  /* Botões do carrinho alinhados e responsivos */
+  .cart-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
+  }
+  .cart-buttons .btn {
+    flex: 1 1 45% !important;
+    font-size: 1.2rem !important;
+  }
+}
+
+/* === 576px === */
+@media (max-width: 576px) {
+  .xxs-wd-100 { width: 100%; }
+  .xxs-hide { display: none !important; }
+  .xxs-stack { flex-direction: column; }
+  .xxs-pd-5 { padding: .5rem; }
+  .xxs-fonte12 { font-size: 1.2rem; }
+}
+
+/* Utilitários gerais */
+.underline {
+  text-decoration: underline;
+}
+
+.cart-table img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.cart-table .trash-wrapper {
+  position: relative;
+}
+
+.cart-table i.fa-trash-can {
+  position: absolute;
+  top: 0;
+  margin: 0;
+}
+
+.btn-100 {
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  header .fa-cart-shopping {
+    position: fixed !important;
+    top: 4rem !important;
+    right: 1rem !important;
+    font-size: 2.2rem !important;
+    z-index: 10000 !important;
+  }
+  header .balao {
+    position: fixed !important;
+    top: 4rem !important;
+    right: 3.5rem !important;
+    min-width: 20px !important;
+    height: 20px !important;
+    font-size: 1rem !important;
+  }
+  header ul {
+    justify-content: flex-end !important;
+  }
+}
+
+@media (max-width: 768px) {
+  footer .box-12 {
+    padding-top: 0.5rem !important;   /* diminui o espaço acima */
+    padding-bottom: 3rem !important; /* diminui espaço abaixo */
+  }
+
+  footer .box-12 p {
+    margin-top: -2rem !important;         /* remove margem superior extra do parágrafo */
+    margin-bottom: 0 !important;      /* remove margem inferior extra do parágrafo */
+  }
+}
+
+/* Para o fundo laranja ocupar 100% da largura no mobile */
+@media (max-width: 768px) {
+  .bg-p1-laranja {
+    display: block !important; /* Exibir como bloco */
+    width: auto !important; /* Garantir que o fundo ocupe toda a largura */
+    background-color: #EC5264 !important; /* Fundo laranja */
+    text-align: center !important; /* Centralizar o texto */
+    padding-left: 0.5rem !important; /* Ajuste do padding */
+    padding-right: 0.5rem !important; /* Ajuste do padding */
+  }
+}
